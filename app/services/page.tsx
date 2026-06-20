@@ -15,28 +15,44 @@ const services = [
     title: "Graphics Design",
     desc: "Visual storytelling that captures attention and reinforces brand authority across all digital touchpoints.",
     items: ["Logo & Branding", "Social Media Kits", "UI/UX Concepts"],
+<<<<<<< HEAD
     price: "$49",
+=======
+    price: "₦2,000",
+>>>>>>> 271aefa (initial commit)
   },
   {
     icon: Clapperboard,
     title: "Video Editing",
     desc: "High-impact motion graphics and cinematic editing to boost engagement and conversion rates.",
     items: ["Reels & TikToks", "YouTube Content", "Ad Campaigns"],
+<<<<<<< HEAD
     price: "$89",
+=======
+    price: "₦20,000",
+>>>>>>> 271aefa (initial commit)
   },
   {
     icon: Languages,
     title: "Online Services",
-    desc: "End-to-end digital support including SEO optimization, virtual assistance, and data management.",
+    desc: "End-to-end digital support inccluding SEO optimization, virtual assistance, and data management.",
     items: ["SEO Optimization", "Content Strategy", "Virtual Support"],
+<<<<<<< HEAD
     price: "$120",
+=======
+    price: "₦2,000",
+>>>>>>> 271aefa (initial commit)
   },
   {
     icon: WalletCards,
     title: "Payment Services",
     desc: "Secure financial integrations and payment gateway setups for seamless global transactions.",
     items: ["Gateway Integration", "Subscription Management", "Multi-Currency Setup"],
+<<<<<<< HEAD
     price: "$199",
+=======
+    price: "₦2,000",
+>>>>>>> 271aefa (initial commit)
   },
 ];
 

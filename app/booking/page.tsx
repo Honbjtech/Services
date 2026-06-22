@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Navbar from "../components/navbar";
 
 type ServiceKey = "graphics" | "video" | "online" | "payment";
@@ -19,7 +20,7 @@ type PackageType = {
 
 const services: ServiceType[] = [
   { id: "graphics", title: "Graphics Design" },
-  { id: "video", title: "Video Editing" },
+  { id: "video", title: "Video Editing/Advert" },
   { id: "online", title: "Online Service" },
   { id: "payment", title: "Payment Service" },
 ];
@@ -59,10 +60,10 @@ const pricing: Record<
   online: {
     basic: { price: "₦2,000", delivery: "30 Mins" },
     standard: { price: "₦3,000", delivery: "1 Hour" },
-    premium: { price: "₦5,000", delivery: "1 Days" },
+    premium: { price: "₦5,000", delivery: "1 Day" },
   },
   payment: {
-    basic: { price: "₦2,000", delivery: "1 Hours" },
+    basic: { price: "₦2,000", delivery: "1 Hour" },
     standard: { price: "₦3,000", delivery: "2 Hours" },
     premium: { price: "₦5,000", delivery: "3 Hours" },
   },
@@ -83,54 +84,7 @@ export default function Booking() {
     <div className="min-h-screen bg-[#eff0f2] text-[#111318]">
       <Navbar />
 
-      <div className="mx-auto w-[92%] max-w-[1220px]">
-        {/* Top Right */}
-        <div className="flex flex-wrap items-center justify-end gap-4 pt-7 pb-3">
-          <span className="text-base font-medium text-[#2b2f36]">
-            Step 2 of 3
-          </span>
-          <button className="rounded-xl bg-[#101419] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
-            Need Help?
-          </button>
-        </div>
-
-        {/* Stepper */}
-        <section className="py-10 md:py-14">
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-7">
-            <div className="flex min-w-[120px] flex-col items-center gap-2.5">
-              <div className="grid h-[50px] w-[50px] place-items-center rounded-full bg-[#f2cc52] text-[17px] font-bold text-[#111]">
-                ✓
-              </div>
-              <span className="text-[15px] font-medium text-[#2c3139]">
-                Selection
-              </span>
-            </div>
-
-            <div className="h-[2px] w-[80px] rounded-full bg-[#20252d] md:w-[170px]" />
-
-            <div className="flex min-w-[120px] flex-col items-center gap-2.5">
-              <div className="grid h-[50px] w-[50px] place-items-center rounded-full bg-[#131820] text-[17px] font-bold text-white">
-                2
-              </div>
-              <span className="text-[15px] font-medium text-[#2c3139]">
-                Booking
-              </span>
-            </div>
-
-            <div className="h-[2px] w-[80px] rounded-full bg-[#d7d9de] md:w-[170px]" />
-
-            <div className="flex min-w-[120px] flex-col items-center gap-2.5">
-              <div className="grid h-[50px] w-[50px] place-items-center rounded-full bg-[#e1e2e5] text-[17px] font-bold text-[#666]">
-                3
-              </div>
-              <span className="text-[15px] font-medium text-[#2c3139]">
-                Checkout
-              </span>
-            </div>
-          </div>
-        </section>
-
-        {/* Main Content */}
+      <div className="mx-auto w-[92%] max-w-[1220px] py-10">
         <section className="pb-16">
           <div className="grid grid-cols-1 gap-7 xl:grid-cols-[1.7fr_0.82fr]">
             {/* Left Card */}
@@ -176,7 +130,8 @@ export default function Booking() {
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
                   {packages.map((pkg) => {
                     const isActive = selectedPackage.id === pkg.id;
-                    const servicePackageInfo = pricing[selectedService.id][pkg.id];
+                    const servicePackageInfo =
+                      pricing[selectedService.id][pkg.id];
 
                     return (
                       <button
@@ -220,20 +175,8 @@ export default function Booking() {
                 />
               </div>
 
-              {/* Bottom Fields */}
+              {/* Target Deadline */}
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-                <div>
-                  <label className="mb-3 block text-base font-medium text-[#24272e]">
-                    Brief or Assets (Optional)
-                  </label>
-
-                  <label className="flex min-h-[76px] cursor-pointer items-center justify-center gap-2 rounded-[14px] border-2 border-dashed border-[#c6c8ce] bg-[#fafafa] px-4 text-[#1f2328]">
-                    <input type="file" className="hidden" />
-                    <span className="text-base">⬆</span>
-                    <span>Upload Documents</span>
-                  </label>
-                </div>
-
                 <div>
                   <label className="mb-3 block text-base font-medium text-[#24272e]">
                     Target Deadline
@@ -288,9 +231,17 @@ export default function Booking() {
                   </div>
                 </div>
 
-                <button className="w-full rounded-[14px] bg-[#f2cc52] px-4 py-4 font-bold text-[#232323] transition hover:brightness-95">
+                {/* Checkout Link */}
+                <Link
+                  href={`/checkout?service=${encodeURIComponent(
+                    selectedService.title
+                  )}&price=${encodeURIComponent(
+                    currentSelection.price.replace(/[₦,]/g, "")
+                  )}&package=${encodeURIComponent(selectedPackage.title)}`}
+                  className="block w-full rounded-[14px] bg-[#f2cc52] px-4 py-4 text-center font-bold text-[#232323] transition hover:brightness-95"
+                >
                   Continue to Checkout →
-                </button>
+                </Link>
               </div>
 
               <div className="flex items-start gap-3 rounded-2xl border border-[#d5d7dd] bg-[#f6f6f7] p-4">

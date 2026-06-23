@@ -9,6 +9,7 @@ import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 export default function CheckoutContent() {
   const searchParams = useSearchParams();
 const router = useRouter();
+const [promoCode, setPromoCode] = useState("");
   const service = searchParams.get("service") || "Digital Service";
   const packageName = searchParams.get("package") || "Hon BJ Tech Service";
   const basePrice = Number(searchParams.get("price")) || 0;
@@ -16,7 +17,7 @@ const router = useRouter();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [promoCode, setPromoCode] = useState("");
+  // const [promoCode, setPromoCode] = useState("");
   const [subscribe, setSubscribe] = useState(false);
 
   const serviceFee = 500;
@@ -28,7 +29,7 @@ const router = useRouter();
 
   const config = {
     public_key: process.env.NEXT_PUBLIC_FLW_PUBLIC_KEY || "FLWPUBK_TEST-3b047d69e84364dcb194e8a8f98ac7b0-X",
-    tx_ref: `HONBJTECH-${Date.now()}`,
+    tx_ref: `BJ NexTech Solutions-${Date.now()}`,
     amount: total,
     currency: "NGN",
     payment_options: "card,banktransfer,ussd",
@@ -38,7 +39,7 @@ const router = useRouter();
       name: fullName,
     },
     customizations: {
-      title: "Hon BJ Tech",
+      title: "BJ NexTech Solutions",
       description: `${service} - ${packageName}`,
       logo: "https://your-logo-url.com/logo.png",
     },
@@ -97,7 +98,7 @@ const router = useRouter();
       <header className="border-b border-black/5 bg-[#eff0f2]">
         <div className="mx-auto flex w-[92%] max-w-[1240px] items-center justify-between py-5">
           <Link href="/" className="text-[2.2rem] font-bold tracking-[-0.04em]">
-            Hon BJ Tech
+            BJ NexTech Solutions
           </Link>
 
           <Link
@@ -173,12 +174,7 @@ const router = useRouter();
                 />
               </div>
 
-              <div>
-                <label className="mb-2 block text-[1rem] font-medium text-[#24272e]">
-                  Promo Code (Optional)
-                </label>
-                <div className="flex h-[64px] items-center rounded-[12px] border border-[#cfd3d9] bg-[#eef0f3] pr-3 focus-within:border-black">
-                  <input
+               <input
                     type="text"
                     placeholder="PROMO2026"
                     value={promoCode}
@@ -193,7 +189,7 @@ const router = useRouter();
                   </button>
                 </div>
               </div>
-            </div>
+            {/* </div> */}
 
             <label className="mt-8 flex items-start gap-3 text-[1.05rem] text-[#333842]">
               <input
@@ -206,7 +202,7 @@ const router = useRouter();
                 Send me updates about Hon BJ digital services and exclusive offers.
               </span>
             </label>
-          </div>
+          {/* </div> */}
 
           {/* RIGHT SIDE */}
           <aside className="flex flex-col gap-7">

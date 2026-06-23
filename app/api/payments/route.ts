@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     },
 
     customizations: {
-      title: "Hon BJ Tech",
+      title: "BJ NexTech Solutions",
       description: "Website Service Payment",
     },
   };

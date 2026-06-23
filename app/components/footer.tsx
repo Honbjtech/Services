@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h3 className="text-lg font-bold text-[#f5d45b]">Hon BJ</h3>
+            <h3 className="text-lg font-bold text-[#f5d45b]">BJ NexTech Solutions</h3>
 
             <p className="mt-5 text-sm leading-7 text-white/60">
               Premium Digital Services providing technical precision and
@@ -66,7 +66,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-16 border-t border-white/10 pt-8 text-center">
           <p className="text-xs text-white/50">
-            © 2024 Hon BJ Digital Services. All rights reserved.
+            © 2024 BJ NexTech Solutions. All rights reserved.
           </p>
         </div>
       </div>

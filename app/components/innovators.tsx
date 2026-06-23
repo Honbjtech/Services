@@ -6,7 +6,7 @@ export default function Innovators() {
       name: "Alex Rivera",
       role: "CEO, TECHFLOW",
       image: "/avatar-1.jpg",
-      text: "Hon BJ transformed our brand's visual identity. The turnaround was incredibly fast, and the quality of the graphics exceeded our highest expectations.",
+      text: "BJ NexTech Solutions transformed our brand's visual identity. The turnaround was incredibly fast, and the quality of the graphics exceeded our highest expectations.",
     },
     {
       name: "Sarah Chen",

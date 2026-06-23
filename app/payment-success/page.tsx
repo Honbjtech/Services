@@ -88,7 +88,7 @@ export default function PaymentSuccessPage() {
 
         {/* Watermark */}
         <div className="pointer-events-none mt-20 w-full max-w-[1300px] text-right text-5xl font-bold text-[#d8dade] sm:text-7xl md:text-8xl">
-          Hon BJ TECH
+          BJ NexTech Solutions
         </div>
       </section>
     </main>

@@ -24,7 +24,7 @@ export default function AboutPage() {
       <section className="mx-auto grid max-w-[1500px] items-center gap-12 px-5 py-20 md:px-10 lg:grid-cols-2 lg:px-12">
         <div>
           <p className="text-sm font-bold uppercase tracking-widest text-[#d4a72c]">
-            About Hon BJ
+            About BJ NexTech Solutions
           </p>
 
           <h1 className="mt-5 text-[42px] font-extrabold leading-[1.08] tracking-[-0.04em] md:text-[58px]">
@@ -33,7 +33,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="mt-6 max-w-[620px] text-[16px] leading-8 text-black/70">
-            Hon BJ Digital Services was founded with a simple mission — to help
+            BJ NexTech Solutions was founded with a simple mission — to help
             businesses and brands unlock their full digital potential through
             innovative solutions, technical precision, and unmatched reliability.
           </p>

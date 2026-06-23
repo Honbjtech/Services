@@ -5,7 +5,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-[#f5f7f8] shadow-sm">
       <nav className="mx-auto flex h-[64px] max-w-[1500px] items-center justify-between px-5 md:px-10 lg:px-12">
         <Link href="/" className="text-[26px] font-semibold text-black">
-          Hon. BJ Tech
+          BJ NexTech Solutions
         </Link>
 
         <div className="hidden items-center gap-8 text-[13px] font-medium md:flex">

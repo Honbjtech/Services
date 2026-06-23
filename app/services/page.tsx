@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   Rocket,
 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -107,9 +108,12 @@ export default function ServicesPage() {
                     </p>
                   </div>
 
-                  <button className="mt-5 h-12 w-full rounded-md bg-black text-[14px] font-semibold text-white transition hover:bg-black/80">
+                  <button  className="mt-5 h-12 w-full rounded-md bg-black text-[14px] font-semibold text-white transition hover:bg-black/80">
+                  <Link href={'/booking'}>
                     Book Now
+                    </Link>
                   </button>
+                  
                 </div>
               );
             })}

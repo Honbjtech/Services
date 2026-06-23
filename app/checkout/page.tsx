@@ -2,12 +2,13 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 
 export default function CheckoutPage() {
   const searchParams = useSearchParams();
-
+const router = useRouter();
   const service = searchParams.get("service") || "Digital Service";
   const packageName = searchParams.get("package") || "Hon BJ Tech Service";
   const basePrice = Number(searchParams.get("price")) || 0;
@@ -26,8 +27,8 @@ export default function CheckoutPage() {
   const total = useMemo(() => subtotal + serviceFee + tax, [subtotal, tax]);
 
   const config = {
-    public_key: process.env.NEXT_PUBLIC_FLW_PUBLIC_KEY || "",
-    tx_ref: `HONBJ-${Date.now()}`,
+    public_key: process.env.NEXT_PUBLIC_FLW_PUBLIC_KEY || "FLWPUBK_TEST-3b047d69e84364dcb194e8a8f98ac7b0-X",
+    tx_ref: `HONBJTECH-${Date.now()}`,
     amount: total,
     currency: "NGN",
     payment_options: "card,banktransfer,ussd",
@@ -45,7 +46,12 @@ export default function CheckoutPage() {
 
   const handleFlutterPayment = useFlutterwave(config);
 
-  const handlePayment = () => {
+
+  const handlePayment = async () => {
+    try {
+
+
+
     if (!fullName || !email || !phone) {
       alert("Please fill in your full name, email and phone number.");
       return;
@@ -56,7 +62,13 @@ export default function CheckoutPage() {
       return;
     }
 
-    handleFlutterPayment({
+    console.log("Making payment")
+
+    console.log({
+      config
+    })
+
+    await handleFlutterPayment({
       callback: (response) => {
         console.log(response);
 
@@ -70,7 +82,14 @@ export default function CheckoutPage() {
         console.log("Payment closed");
       },
     });
-  };
+
+
+    }catch(err) {
+      console.log({err})
+    }
+  }
+
+
 
   return (
     <div className="min-h-screen bg-[#eff0f2] text-[#101318]">
@@ -161,7 +180,7 @@ export default function CheckoutPage() {
                 <div className="flex h-[64px] items-center rounded-[12px] border border-[#cfd3d9] bg-[#eef0f3] pr-3 focus-within:border-black">
                   <input
                     type="text"
-                    placeholder="PROMO2024"
+                    placeholder="PROMO2026"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
                     className="h-full flex-1 bg-transparent px-5 text-[1.05rem] outline-none placeholder:text-[#8d949d]"
@@ -243,13 +262,14 @@ export default function CheckoutPage() {
                 </div>
               </div>
 
-              <button
-                onClick={handlePayment}
-                className="mt-8 flex h-[64px] w-full items-center justify-center gap-3 rounded-[12px] bg-[#f2cc52] px-5 text-[1.08rem] font-semibold text-[#262014]"
-              >
-                <LockIcon />
-                Proceed to Payment
-              </button>
+        {/* <Link href="/payment"> */}
+  <button
+  onClick={handlePayment}
+  
+  className="bg-yellow-400 px-6 py-3 rounded">
+    Proceed to Payment
+  </button>
+{/* </Link> */}
 
               <p className="mt-5 text-center text-[0.96rem] leading-7 text-[#333842]">
                 By clicking proceed, you agree to Hon BJ&apos;s{" "}

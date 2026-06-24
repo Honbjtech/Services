@@ -34,7 +34,7 @@ export default function PaymentSuccessPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-[760px] text-lg leading-8 text-[#555b65] sm:text-xl">
-            Thank you for choosing Hon. BJ TECH. Your professional digital service
+            Thank you for choosing NexTech Services. Your professional digital service
             request has been confirmed and scheduled.
           </p>
         </div>
@@ -88,7 +88,7 @@ export default function PaymentSuccessPage() {
 
         {/* Watermark */}
         <div className="pointer-events-none mt-20 w-full max-w-[1300px] text-right text-5xl font-bold text-[#d8dade] sm:text-7xl md:text-8xl">
-          BJ NexTech Solutions
+          NexTech Solutions
         </div>
       </section>
     </main>

@@ -98,7 +98,7 @@ const [promoCode, setPromoCode] = useState("");
       <header className="border-b border-black/5 bg-[#eff0f2]">
         <div className="mx-auto flex w-[92%] max-w-[1240px] items-center justify-between py-5">
           <Link href="/" className="text-[2.2rem] font-bold tracking-[-0.04em]">
-            BJ NexTech Solutions
+            NexTech Solutions
           </Link>
 
           <Link
@@ -173,35 +173,19 @@ const [promoCode, setPromoCode] = useState("");
                   className="h-[64px] w-full rounded-[12px] border border-[#cfd3d9] bg-[#eef0f3] px-5 text-[1.05rem] outline-none placeholder:text-[#8d949d] focus:border-black"
                 />
               </div>
-
+              <label className="mb-2 block text-[1rem] font-medium text-[#24272e]">
+                  Promocode
+            
                <input
                     type="text"
                     placeholder="PROMO2026"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
-                    className="h-full flex-1 bg-transparent px-5 text-[1.05rem] outline-none placeholder:text-[#8d949d]"
-                  />
-                  <button
-                    type="button"
-                    className="rounded-lg px-3 py-2 text-[0.95rem] font-semibold text-[#1a1d23] transition hover:bg-black/5"
-                  >
-                    Apply
-                  </button>
+                    className="h-[64px] w-full rounded-[12px] border border-[#cfd3d9] bg-[#eef0f3] px-5 text-[1.05rem] outline-none placeholder:text-[#8d949d] focus:border-black"
+                    />
+                    </label>
                 </div>
               </div>
-            {/* </div> */}
-
-            <label className="mt-8 flex items-start gap-3 text-[1.05rem] text-[#333842]">
-              <input
-                type="checkbox"
-                checked={subscribe}
-                onChange={() => setSubscribe(!subscribe)}
-                className="mt-1 h-5 w-5 rounded border border-[#cfd3d9]"
-              />
-              <span>
-                Send me updates about Hon BJ digital services and exclusive offers.
-              </span>
-            </label>
           {/* </div> */}
 
           {/* RIGHT SIDE */}

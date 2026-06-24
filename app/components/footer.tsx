@@ -66,7 +66,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-16 border-t border-white/10 pt-8 text-center">
           <p className="text-xs text-white/50">
-            © 2024 BJ NexTech Solutions. All rights reserved.
+            © 2024 NexTech Solutions. All rights reserved.
           </p>
         </div>
       </div>

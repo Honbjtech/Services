@@ -3,21 +3,21 @@ import { Star } from "lucide-react";
 export default function Innovators() {
   const testimonials = [
     {
-      name: "Alex Rivera",
-      role: "CEO, TECHFLOW",
-      image: "/avatar-1.jpg",
-      text: "BJ NexTech Solutions transformed our brand's visual identity. The turnaround was incredibly fast, and the quality of the graphics exceeded our highest expectations.",
+      name: "Oyewusi Victor",
+      role: "CEO, Hon. BJ Tech",
+      image: "/IMG_7845.JPG",
+      text: "NexTech Solutions transformed our brand's visual identity. The turnaround was incredibly fast, and the quality of the graphics exceeded our highest expectations.",
     },
     {
-      name: "Sarah Chen",
-      role: "CREATIVE DIRECTOR, LUMINA",
-      image: "/avatar-2.jpg",
+      name: "Usman Olamilekan",
+      role: "CREATIVE DIRECTOR, Sar's Man Comdy",
+      image: "/comedy.jpg",
       text: "The video editing service provided by Hon BJ gave our marketing campaign the cinematic edge it needed. Professional, responsive, and creative.",
     },
     {
-      name: "James Wilson",
-      role: "OPS MANAGER, SWIFTPAY",
-      image: "/avatar-3.jpg",
+      name: "Victor Omobolaji",
+      role: "OPS MANAGER, BJ Tech",
+      image: "/pay.jpg",
       text: "Reliable online services that helped us scale our operations. Their payment integration was seamless and secure. Highly recommended for any digital need.",
     },
   ];
